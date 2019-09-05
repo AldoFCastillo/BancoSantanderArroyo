@@ -5,7 +5,8 @@ import java.util.List;
 
 public class Carrera {
 
-    //TODO falta agregar cupo y filtrar repetidos
+    //TODO falta agregar cupo y filtrar repetidos (utilizar metodos)
+    //iter = foreach
 
     private Double distancia;
     private Double premioEnDolares;
@@ -58,8 +59,8 @@ public class Carrera {
         }
     }
 
-
-    public void eliminarVehiculoConPatente(String unaPatente) {
+//con patente
+    public void eliminarVehiculo(String unaPatente) {
         for (Vehiculo unVehiculo : listaDeVehiculos) {
             if (unVehiculo.getPatente().equals(unaPatente)) {
                 listaDeVehiculos.remove(unVehiculo);
