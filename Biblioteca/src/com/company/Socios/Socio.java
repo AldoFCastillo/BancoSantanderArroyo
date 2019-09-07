@@ -15,14 +15,23 @@ public class Socio {
     private String nombre;
     private String apellido;
     private Integer numeroDeID;
-    /*Un socio de una biblioteca además de tener nombre, un apellido, un número de identificación, posee una
-      lista de ejemplares retirados (List<Ejemplar>) y una cantidad máxima (Integer) de libros que puede
-      retirar. Si es un socio clásico, puede llevarse hasta 3 libros. En cambio si es un socio VIP puede llevarse
-      hasta 15 libros.*/
+
+    /**
+     * Un socio de una biblioteca además de tener nombre, un apellido, un número de identificación, posee una
+     *       lista de ejemplares retirados (List<Ejemplar>) y una cantidad máxima (Integer) de libros que puede
+     *       retirar. Si es un socio clásico, puede llevarse hasta 3 libros. En cambio si es un socio VIP puede llevarse
+     *       hasta 15 libros.
+     */
     private List<Ejemplar> ejemplaresRetirados;
     private Integer maximoDeLibros;
 
-
+    /**
+     * Genera pepes
+     * @param nombre
+     * @param apellido
+     * @param numeroDeID
+     * @param maximoDeLibros
+     */
     public Socio(String nombre, String apellido, Integer numeroDeID, Integer maximoDeLibros) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -49,6 +58,13 @@ public class Socio {
 
     /*Crear un método en la clase Socio que permita consultar si un socio tiene cupo disponible para
       llevarse un libro. Este método devuelve true si tiene cupo o false si no tiene cupo.*/
+
+
+    public Boolean tieneCupoDisponible() {
+        return (this.ejemplaresRetirados.size() < maximoDeLibros);
+    }
+
+
     public Boolean tieneCupoDisponible(SocioClasico unSocio) {
         return (this.ejemplaresRetirados.size() < 3);
     }
